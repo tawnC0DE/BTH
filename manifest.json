@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "version": "1.1.1",
+  "default_locale": "en",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{bc21b9a1-3ad6-4b00-bca4-ef5b7e21253b}",
+      "strict_min_version": "63.0"
+    }
+  },
+
+  "icons": {
+  "16": "icons/cmBookmarkStarIcon16.svg",
+  "32": "icons/icon32.png",
+  "64": "icons/icon64.png",
+  "48": "icons/icon48.png"
+  }
+,
+  "options_ui": {
+  "page": "options.htm",
+  "browser_style": true
+},
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+  
+  "permissions": [
+    "menus",
+    "bookmarks",
+    "tabs",
+    "storage"
+  ]
+}

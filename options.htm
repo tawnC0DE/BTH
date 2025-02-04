@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+<p style="font-size: 1.5em;">Options</p>
+  <form>
+  <fieldset>
+    <legend>When Accessing via a <b>Bookmark Folder's</b> Context Menu</legend>
+    <input type="radio" id="BTHfolderTop" name="BTH_atFolder" value="top">
+    <label for="BTHfolderTop">Insert Bookmark at Top of Menu</label><br/>
+    <input type="radio" id="BTHfolderBottom" name="BTH_atFolder" value="bottom">
+    <label for="BTHfolderBottom">Insert Bookmark at Bottom of Menu</label><br/><br/>
+
+    <legend>When Accessing via an <b>Individual Bookmark Item's</b> Context Menu</legend>
+    <input type="radio" id="BTHaboveMenuItem" name="BTH_atMenuitem" value="above">
+    <label for="BTHaboveMenuItem">Insert Bookmark Above Menu Item</label><br/>
+    <input type="radio" id="BTHbelowMenuItem" name="BTH_atMenuitem" value="below">
+    <label for="BTHbelowMenuItem">Insert Bookmark Below Menu Item</label><br/><br/>
+    
+    <input type="checkbox" id="BTH_allTabs" name="BTH_bookmarkAllTabs">
+    <label for="BTH_allTabs">'Shift-Click' Bookmarks All Tabs in Current Window</label><br/> 
+  </fieldset><br />
+  
+  <fieldset>  
+    <legend>Show Editor Window when clicking 'Bookmark Tab(s) Here'</legend>
+    <input type="radio" id="BTHctrl" name="BTH_UI" value="ctrl">
+    <label for="BTHctrl">On Ctrl-click</label><br/>    
+    <input type="radio" id="BTHall" name="BTH_UI" value="all">
+    <label for="BTHall">Always</label><br/>
+  </fieldset><br />
+  
+  <fieldset>
+    <legend>If Bookmark Already Exists</legend>
+    <input type="checkbox" id="BTH_avoidDup" name="BTH_moveToAvoidDup">
+    <label for="BTH_avoidDup">Move Instead Of Duplicating<span style="font-size:80%;"> (Experimental - Use caution!)</span></label><br/> 
+  </fieldset>
+
+  <fieldset>
+    <legend>Editor Window Size</legend>
+    <input  type="number" inputmode="numeric" pattern="[0-9]*" value="500" min="15" max="1000" step="5" style="width:4em;" id="BTH_winWidth" name="BTH_editWinWidth">
+    <label for="BTH_winWidth">Width</label>&nbsp;&nbsp;&nbsp;
+    <input type="number" inputmode="numeric" pattern="[0-9]*" value="325" min="15" max="1000" step="5" style="width:4em;" id="BTH_winHeight" name="BTH_editWinHeight">
+    <label for="BTH_winHeight">Height</label><br/> 
+    
+  </fieldset>
+  
+  </form>
+  <script src="options.js"></script>
+</body>
+
+</html>

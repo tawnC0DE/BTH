@@ -1,0 +1,51 @@
+{
+  "extensionName": {
+    "message": "Bookmark Tab Here",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "Adds context menu item 'Bookmark Tab Here' to Bookmarks Menus as an alternative bookmarking method.",
+    "description": "Description of the add-on."
+  },
+
+  "BTH_menuitemText": {
+    "message": "Bookmark Tab(s) &Here",
+    "description": "Text of BTH context menu item."
+  },
+  
+  "BTH_newFolderQ": {
+    "message": "Create new folder for bookmark(s)?",
+    "description": "Editor dialog text: for specifing name of new subfolder"
+  },
+
+  "BTH_titleEdit": {
+    "message": "Edit Bookmark title?",
+    "description": "Editor dialog text: for specifing name of new bookmark"
+  },
+  
+  "BTH_dlgBtnText": {
+    "message": "Add Bookmark(s)",
+    "description": "Editor dialog: text on button:"
+  },
+  
+  "BTH_placeholder": {
+    "message": "[Folder Name]",
+    "description": "Editor dialog: Placeholder text to cue entering desired name of new subfolder"
+  },
+
+  "BTH_cancelHint": {
+    "message": "[To cancel bookmarking, close this window]",
+    "description": "Editor dialog: Substitutes for Cancel button"
+  },
+  
+  "BTH_warning": {
+    "message": "No further Bookmark Tab Here actions are possible while this previous editor window is open. Please interact with it first, then try again.",
+    "description": "Warning to user due to previous editor dialog ignored"
+  }
+  
+}
+
+
+
+
