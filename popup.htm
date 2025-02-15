@@ -2,14 +2,9 @@
 <!-- This popup window runs in the content process to obtain bookmark details from user -->
 <!-- Strings are dynamically inserted by content.js to support various locales -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<script src="content.js"></script>
-<style>
-  body {text-align: center;}
-  input {margin-bottom: 1.5em; margin-top: .25em; width: 65%; min-width: 10em;}
-  h1 {font-size: 120%;}
-  button {padding: .25em 3em; font-weight: bold;}
-</style>
 <head>
+  <script src="content.js"></script>
+  <style>@import url(./popup.css);</style>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title></title>
 </head>
@@ -19,13 +14,13 @@
 <form>
   <label for="foldername"></label><br />
   <input type="text" id="foldername" name="foldername" autofocus  minlength="1" maxlength="500" placeholder="" /><br />
-  
+
   <label for="bookmarktitle"></label><br />
   <input type="text" id="bookmarktitle" name="bookmarktitle" maxlength="500" /><br /><br />
-   
+
   <button type="submit" id="ok"></button><br /><br />
   <i id="cancel" style="font-size:75%;"></i>
 </form>
- 
+
 </body>
 </html>
