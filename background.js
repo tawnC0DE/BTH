@@ -19,7 +19,6 @@ async function contentMsgHandler (request, sender, sendResponse) {
              .then (result => result);
     case "cancel":
       await browser.storage.session.remove("popupId");
-      console.log("popupId removed");
       await browser.storage.session.remove("popupTabId");
       break;
     default:
@@ -45,7 +44,6 @@ async function processEditorInfo (info) {
   // close created UI window and delete saved window/tab id's
   await browser.windows.remove(winPopupId);
   await browser.storage.session.remove(["popupId", "popupTabId"]);
-  console.log("popupId removed");
 }
 
 // el called when BTH contextmenu entry is clicked
@@ -117,7 +115,6 @@ async function getIndex (menuitem, bookmarkTreeNode) {
   if (bookmarkTreeNode.type != "folder") { // contextmenu of a menuitem
     // set bookmark above or below menuitem depending on option
     position = await getSetting("menuitemBookmarkPosition", "below");
-    console.log(position);
     var offset = (position == "below") ? 1 : 0;  // set to 1 for below menuitem or 0 for above menuitem
     return bookmarkTreeNode.index + offset;
   } else { // contextmenu of a folder
@@ -144,15 +141,11 @@ async function openEditorPopup () {
     popupTabId: editorPopup.tabs[0].id,
     popupId: editorPopup.id
   });
-  console.log("popupId set");
 }
 
 async function bookmarkTabs (menuitem, modif) {
   let popupWinOpen = await getSessionSetting("popupId", "");
-  console.log("popupId is still set to: " + popupWinOpen);
- // let popupOpen = await isWindowValid(popupWin);
 
-// console.log("already a valid popup? :  " + popupOpen);
   if (popupWinOpen) {
     // if our previous editor window is still open, block further actions to avoid destroying previous bookmarking info
     warnUserIgnoredEditor();
@@ -161,7 +154,6 @@ async function bookmarkTabs (menuitem, modif) {
 
   var ShiftKey = modif.includes('Shift');
   var editorSetting = await getSetting("editorWin", "ctrl");
-  console.log(editorSetting);
   var alwaysShowEditor = (editorSetting == "all") ? true: false;
   var showEditor = alwaysShowEditor || modif.includes('Ctrl');
   var bookmarkAllTabsEnabled =  await getSetting("bookmarkAllTabs", "false");
