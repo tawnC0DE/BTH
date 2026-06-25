@@ -89,7 +89,7 @@ async function addBookmarks (tabs, index, folder, newTitle) {
     // Could search for url as a string rather than {url:URL} object as workaround for Bug 1352835
     // but when searching as a string "Each search term matches if it is a *substring* in the bookmark's URL"
     // i.e.  www.foo.com matches www.foo.com/bar/foo.htm which is not an identical url and should definitely not be considered a dup!
-    var searchForDup = getSetting("dupPref", "false");
+    var searchForDup = await getSetting("dupPref", "false");
     var nodes = (searchForDup && !isAboutPage) ?  await browser.bookmarks.search({ url: tabUrl }) :  await Promise.resolve([]);
     if (nodes.length) {   // found a dup
     // move returns a promise, ideally we should wait for it and save new bookmark if rejected (IOW, do the below 'else' if unable to move)
