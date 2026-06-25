@@ -2,12 +2,12 @@
   "manifest_version": 3,
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "default_locale": "en",
   "browser_specific_settings": {
     "gecko": {
       "id": "{bc21b9a1-3ad6-4b00-bca4-ef5b7e21253b}",
-      "strict_min_version": "115.0",
+      "strict_min_version": "140.0",
 	  "data_collection_permissions": {
         "required": ["none"]
       }
@@ -28,7 +28,7 @@
   "background": {
     "scripts": ["background.js"]
   },
-  
+
   "permissions": [
     "menus",
     "bookmarks",
