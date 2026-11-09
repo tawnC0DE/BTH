@@ -1,12 +1,28 @@
 browser.runtime.onInstalled.addListener(createContextMenuItem);
+
 browser.runtime.onMessage.addListener(contentMsgHandler);
+
+// should actually be unnecessary since menuitem added on install should not disappear
+// this is an attempt to address (non-reproducible) issue#4
+browser.runtime.onStartup.addListener(() => {console.log("BTH:  onStartup called"); createContextMenuItem();});
+
 
 // Create BTH context menu item
 function createContextMenuItem (){
+  console.log("BTH:  attempting cm creation");
   browser.menus.create({
     id: "BTH",
     title: browser.i18n.getMessage("BTH_menuitemText"),
+
     contexts: ["bookmark"]
+  },  // Function runs after menus.create
+   () => {  // Handle error if the menu item already exists; possibly prevent disappearing cm?
+    if (browser.runtime.lastError) {
+      // Log then ignore the error
+      console.log("BTH:  Menu creation error:", browser.runtime.lastError.message);
+    } else {
+        console.log("BTH:  cm created");
+      }
   });
 }
 
